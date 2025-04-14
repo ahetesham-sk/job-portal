@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Job</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Font awesome Pro v5.10.0 CDN -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- SweetAlert2 CSS (optional but looks better) -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/images/logo.png" class="img-fluid" alt="Logo" width="100" height="auto">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#">Jobs</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#">Companies</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <button class="btn btn-primary" type="button">Login</button>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <button class="btn btn-outline-dark" type="button">Register</button>
+                        </li>
+                    </ul>
+                    <!-- <form class="d-flex">
+                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-user"></i> John Doe
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                                    <li><a class="dropdown-item" href="#">My Jobs</a></li>
+                                    <li><a class="dropdown-item" href="#">Change Password</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </form> -->
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Hero Section Start -->
+    <div class="container-fluid p-5 hero-section-bg">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hero-section text-center py-5">
+                    <h1>Find Your <span class="text-primary">Dream Job</span></h1>
+                    <p>Search thousands of jobs from top companies</p>
+
+                    <!-- Job Search Input -->
+                    <div class="d-flex justify-content-center mt-4">
+                        <div class="input-group shadow" style="max-width: 500px; width: 100%;">
+                            <input type="text" class="form-control form-control-lg" placeholder="Search for jobs..."
+                                autofocus>
+                            <button class="btn btn-primary" type="button">
+                                <i class="fa fa-search"></i> Search
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="card hover-card">
+                    <div class="card-body text-center">
+                        <p><i class="fas fa-laptop-code text-primary fa-2x"></i></p>
+                        <h5 class="mb-0 text-primary">IT & Software</h5>
+                        <p>(1245 Jobs)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card hover-card">
+                    <div class="card-body text-center">
+                        <p><i class="fas fa-chart-line text-primary fa-2x"></i></p>
+                        <h5 class="mb-0 text-primary">Marketing</h5>
+                        <p>(872 Jobs)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card hover-card">
+                    <div class="card-body text-center">
+                        <p><i class="fas fa-user-nurse text-primary fa-2x"></i></p>
+                        <h5 class="mb-0 text-primary">Healthcare</h5>
+                        <p>(635 Jobs)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card hover-card">
+                    <div class="card-body text-center">
+                        <p><i class="fas fa-balance-scale text-primary fa-2x"></i></p>
+                        <h5 class="mb-0 text-primary">Legal</h5>
+                        <p>(410 Jobs)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card hover-card">
+                    <div class="card-body text-center">
+                        <p><i class="fas fa-business-time text-primary fa-2x"></i></p>
+                        <h5 class="mb-0 text-primary">Finance</h5>
+                        <p>(980 Jobs)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card hover-card">
+                    <div class="card-body text-center">
+                        <p><i class="fas fa-hotel text-primary fa-2x"></i></p>
+                        <h5 class="mb-0 text-primary">Hotels</h5>
+                        <p>(1100 Jobs)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Section End -->
+
+    <!-- Main Start -->
+    <div class="container-fluid p-5 bg-grey">
+        <div class="row py-5">
+            <div class="col-lg-12 mb-3 text-center">
+                <h3>Latest <span class="text-primary">Job's</span></h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="col-lg-3 offset-2">
+                <input type="text" class="form-control form-control-lg" placeholder="Job Title, Keywords or Company">
+            </div>
+            <div class="col-lg-3">
+                <input type="text" class="form-control form-control-lg" placeholder="City, State, Zip code or Remote">
+            </div>
+            <div class="col-lg-3">
+                <button type="button" class="btn btn-primary btn-block btn-lg"><i class="fa fa-search"></i> Find
+                    Jobs</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="mb-0">Filter Job</h5>
+                            <button class="btn btn-outline-dark btn-sm"><i class="fa fa-times"></i> Clear</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6>Company Type:</h6>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="startup">
+                            <label class="form-check-label" for="startup">
+                                Startup
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="mnc">
+                            <label class="form-check-label" for="fmnc">
+                                Foreign MNC
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="mnc">
+                            <label class="form-check-label" for="imnc">
+                                Indian MNC
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="mnc">
+                            <label class="form-check-label" for="others">
+                                Others
+                            </label>
+                        </div>
+
+                        <hr>
+                        <h6>Location:</h6>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="delhi">
+                            <label class="form-check-label" for="delhi">
+                                Delhi
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="mumbai">
+                            <label class="form-check-label" for="mumbai">
+                                Mumbai
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="pune">
+                            <label class="form-check-label" for="pune">
+                                Pune
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="bengaluru">
+                            <label class="form-check-label" for="bengaluru">
+                                Bengaluru
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="ahemdabad">
+                            <label class="form-check-label" for="ahemdabad">
+                                Ahemdabad
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="chennai">
+                            <label class="form-check-label" for="chennai">
+                                Chennai
+                            </label>
+                        </div>
+
+                        <hr>
+                        <h6>Industry:</h6>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="it">
+                            <label class="form-check-label" for="it">
+                                IT / Software
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="financial">
+                            <label class="form-check-label" for="financial">
+                                Financial Services
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="marketing">
+                            <label class="form-check-label" for="marketing">
+                                Marketing
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="automative">
+                            <label class="form-check-label" for="automative">
+                                Automative
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="medical">
+                            <label class="form-check-label" for="medical">
+                                Medical
+                            </label>
+                        </div>
+
+                        <hr>
+                        <h6>Salary:</h6>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="basic">
+                            <label class="form-check-label" for="basic">
+                                2LPA - 5LPA
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="intermediate">
+                            <label class="form-check-label" for="intermediate">
+                                5LPA - 15LPA
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="advanced">
+                            <label class="form-check-label" for="advanced">
+                                15LPA - 50LPA
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="card job-card">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img src="assets/images/logo.png" class="img-fluid">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <h5 class="card-title mb-0">Google Inc.</h5>
+                                        <small class="card-subtitle mb-2 text-muted">Mumbai</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Project Manager</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem totam repellat nisi
+                                    omnis explicabo, modi optio. Velit fuga reiciendis, exercitationem, numquam magnam
+                                    ipsum voluptas cumque pariatur labore temporibus laborum! Voluptates.
+                                </p>
+                                <span class="badge bg-primary">2 Positions</span>
+                                <span class="badge bg-dark">Full Time</span>
+                                <span class="badge bg-success">8 Years</span>
+                                <span class="badge bg-info">30 LPA</span>
+                                <span class="badge bg-danger">WFO</span>
+                            </div>
+                            <div class="card-footer py-3 text-center">
+                                <button class="btn btn-primary" onclick="showAlert()">Apply Now</button>
+                                <button class="btn btn-outline-dark" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card job-card">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img src="assets/images/logo.png" class="img-fluid">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <h5 class="card-title mb-0">Infosys</h5>
+                                        <small class="card-subtitle mb-2 text-muted">Chennai</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Software Developer</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem totam repellat nisi
+                                    omnis explicabo, modi optio. Velit fuga reiciendis, exercitationem, numquam magnam
+                                    ipsum voluptas cumque pariatur labore temporibus laborum! Voluptates.
+                                </p>
+                                <span class="badge bg-primary">2 Positions</span>
+                                <span class="badge bg-dark">Full Time</span>
+                                <span class="badge bg-success">8 Years</span>
+                                <span class="badge bg-info">30 LPA</span>
+                                <span class="badge bg-danger">WFO</span>
+                            </div>
+                            <div class="card-footer py-3 text-center">
+                                <button class="btn btn-primary" onclick="showAlert()">Apply Now</button>
+                                <button class="btn btn-outline-dark" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card job-card">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img src="assets/images/logo.png" class="img-fluid">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <h5 class="card-title mb-0">Cognizant</h5>
+                                        <small class="card-subtitle mb-2 text-muted">Pune</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Team Leader</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem totam repellat nisi
+                                    omnis explicabo, modi optio. Velit fuga reiciendis, exercitationem, numquam magnam
+                                    ipsum voluptas cumque pariatur labore temporibus laborum! Voluptates.
+                                </p>
+                                <span class="badge bg-primary">2 Positions</span>
+                                <span class="badge bg-dark">Full Time</span>
+                                <span class="badge bg-success">8 Years</span>
+                                <span class="badge bg-info">30 LPA</span>
+                                <span class="badge bg-danger">WFO</span>
+                            </div>
+                            <div class="card-footer py-3 text-center">
+                                <button class="btn btn-primary" onclick="showAlert()">Apply Now</button>
+                                <button class="btn btn-outline-dark" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="card job-card">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img src="assets/images/logo.png" class="img-fluid">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <h5 class="card-title mb-0">Tech Mahindra</h5>
+                                        <small class="card-subtitle mb-2 text-muted">Kolkata</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Manager</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem totam repellat nisi
+                                    omnis explicabo, modi optio. Velit fuga reiciendis, exercitationem, numquam magnam
+                                    ipsum voluptas cumque pariatur labore temporibus laborum! Voluptates.
+                                </p>
+                                <span class="badge bg-primary">2 Positions</span>
+                                <span class="badge bg-dark">Full Time</span>
+                                <span class="badge bg-success">8 Years</span>
+                                <span class="badge bg-info">30 LPA</span>
+                                <span class="badge bg-danger">WFO</span>
+                            </div>
+                            <div class="card-footer py-3 text-center">
+                                <button class="btn btn-primary" onclick="showAlert()">Apply Now</button>
+                                <button class="btn btn-outline-dark" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card job-card">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img src="assets/images/logo.png" class="img-fluid">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <h5 class="card-title mb-0">Amazon</h5>
+                                        <small class="card-subtitle mb-2 text-muted">Mumbai</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Senior Software Engineer</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem totam repellat nisi
+                                    omnis explicabo, modi optio. Velit fuga reiciendis, exercitationem, numquam magnam
+                                    ipsum voluptas cumque pariatur labore temporibus laborum! Voluptates.
+                                </p>
+                                <span class="badge bg-primary">2 Positions</span>
+                                <span class="badge bg-dark">Full Time</span>
+                                <span class="badge bg-success">8 Years</span>
+                                <span class="badge bg-info">30 LPA</span>
+                                <span class="badge bg-danger">WFO</span>
+                            </div>
+                            <div class="card-footer py-3 text-center">
+                                <button class="btn btn-primary" onclick="showAlert()">Apply Now</button>
+                                <button class="btn btn-outline-dark" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card job-card">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img src="assets/images/logo.png" class="img-fluid">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <h5 class="card-title mb-0">Citi Bank</h5>
+                                        <small class="card-subtitle mb-2 text-muted">Bengaluru</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">QA Automation</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem totam repellat nisi
+                                    omnis explicabo, modi optio. Velit fuga reiciendis, exercitationem, numquam magnam
+                                    ipsum voluptas cumque pariatur labore temporibus laborum! Voluptates.
+                                </p>
+                                <span class="badge bg-primary">2 Positions</span>
+                                <span class="badge bg-dark">Full Time</span>
+                                <span class="badge bg-success">8 Years</span>
+                                <span class="badge bg-info">30 LPA</span>
+                                <span class="badge bg-danger">WFO</span>
+                            </div>
+                            <div class="card-footer py-3 text-center">
+                                <button class="btn btn-primary" onclick="showAlert()">Apply Now</button>
+                                <button class="btn btn-outline-dark" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Job Details -->
+    <div class="modal fade" id="exampleModal" data-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Job Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p class="text-muted">Post:</p>
+                        </div>
+                        <div class="col-md-10">
+                            <h5 class="mb-0">Project Manager</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p class="text-muted">Company:</p>
+                        </div>
+                        <div class="col-md-10">
+                            <p>Google</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p class="text-muted">Location:</p>
+                        </div>
+                        <div class="col-md-10">
+                            <p>Mumbai, India.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p class="text-muted">Description:</p>
+                        </div>
+                        <div class="col-md-10">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem similique exercitationem,
+                                laudantium fugit laboriosam nam culpa. Consectetur, fugiat. Temporibus assumenda
+                                expedita quo aut quidem natus architecto sed quis ex tempora.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p class="text-muted">Positions:</p>
+                        </div>
+                        <div class="col-md-10">
+                            <span class="badge bg-primary">2 Positions</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p class="text-muted">Work Time:</p>
+                        </div>
+                        <div class="col-md-10">
+                            <span class="badge bg-dark">Full TIme</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p class="text-muted">Experince:</p>
+                        </div>
+                        <div class="col-md-10">
+                            <span class="badge bg-success">8 Years</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p class="text-muted">Salary:</p>
+                        </div>
+                        <div class="col-md-10">
+                            <span class="badge bg-info">30 LPA</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p class="text-muted">Work Type:</p>
+                        </div>
+                        <div class="col-md-10">
+                            <span class="badge bg-danger">Work From Office</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p class="text-muted">Responsibilities:</p>
+                        </div>
+                        <div class="col-md-10">
+                            <ul>
+                                <li>Execute data entry tasks with a high degree of accuracy and efficiency
+                                </li>
+                                <li>Adhere to both oral and written instructions as necessary
+                                </li>
+                                <li>Maintain a distraction-free work environment to ensure productivity
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <button type="button" class="btn btn-primary btn-lg" onclick="showAlert()">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Popper and JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function showAlert() {
+            Swal.fire({
+                title: 'Done!',
+                text: 'Applied successfully',
+                icon: 'success',
+                confirmButtonText: 'Close'
+            });
+        }
+    </script>
+</body>
+
+</html>

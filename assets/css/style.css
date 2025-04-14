@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bs-primary: #bd3389; /* changing bootstrap primary color */
+  }
+
+  /* Optional: Override some Bootstrap components manually if needed */
+  .btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+  }
+
+  .btn-primary:hover {
+    background-color: #ae3782;
+    border-color: #ae3782;
+  }
+
+  .text-primary {
+    color: var(--bs-primary) !important;
+  }
+
+  .bg-primary {
+    background-color: var(--bs-primary) !important;
+  }
+
+.hero-section-bg {
+    background-image: url("../../assets/images/banner.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.hover-card {
+    border-radius: 12px !important;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ae3782;
+    cursor: pointer;
+    color: #bd3389;
+    background-color: antiquewhite;
+}
+
+.job-card {
+    border-radius: 12px !important;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+.job-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ae3782;
+    cursor: pointer;
+}
+
+.bg-grey{
+    background-color: #eee;
+}
